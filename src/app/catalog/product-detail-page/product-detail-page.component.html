@@ -1,0 +1,12 @@
+<div class="container bg-light clearfix">
+    <div class="row">
+        <div class="col-md-6">
+            <img *ngIf="product.imgSrc" src="{{ product.imgSrc }}" alt="thumbnail" class="pull-right img-responsive"/>
+        </div>
+        <div class="col-md-6 pull-right">
+            <h1>{{product.name}}</h1>
+            <p>Sku: {{ product.sku }}</p>
+            <p>$ {{product.price}}</p>
+        </div>
+    </div>
+</div>

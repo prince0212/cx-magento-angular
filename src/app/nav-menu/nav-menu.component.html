@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+      <div>
+        <div>
+          <!-- <ng-container *ngFor="let cateory of navCategories">
+            <p class="product-name">{{ cateory.name }}</p>
+          </ng-container> -->
+        </div>
+        <ul class="nav nav-tabs">
+          <li role="presentation" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active" *ngFor="let cateory of navCategories">
+            <a routerLink="/plp/{{cateory.id}}">{{ cateory.name }}</a>
+          </li>
+        </ul>
+      </div>
+  </div>
+  <div class="row">
+    <router-outlet></router-outlet>
+  </div>
+</div>
