@@ -8,8 +8,8 @@
   
       <div class="collapse navbar-collapse">
 
-        <form class="form-inline my-2 my-lg-0" #form="ngForm" (ngSubmit)="onSubmit(form)">
-          <input class="form-control mr-sm-2" type="search" ngModel placeholder="Search products"/>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search products"/>
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
 
@@ -21,7 +21,7 @@
               </svg>
             </a>
           </li>
-          <li class="dropdown" appDropdown>
+          <li class="dropdown">
             <a style="cursor: pointer" class="dropdown-toggle" role="button"
               >Account<span class="caret"></span
             ></a>
