@@ -17,7 +17,7 @@
                 <a class="dropdown-content" [routerLink]="['/plp', secondCateory.id]">{{ secondCateory.name }}</a>
                 <ul *ngIf="secondCateory['children_data']?.length">
                   <li *ngFor="let thirdCateory of secondCateory['children_data']">
-                    <a class="dropdown-content" routerLink="/plp/{{thirdCateory.id}}">3{{ thirdCateory.name }}</a>,
+                    <a class="dropdown-content" routerLink="/plp/{{thirdCateory.id}}">{{ thirdCateory.name }}</a>,
                       <ul *ngIf="thirdCateory['children_data']?.length">
                         <li *ngFor="let fourthCateory of thirdCateory['children_data']">
                           <a class="dropdown-content" routerLink="/plp/{{fourthCateory.id}}">{{ fourthCateory.name }}</a>
