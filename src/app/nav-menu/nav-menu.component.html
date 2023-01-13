@@ -11,8 +11,8 @@
         </div>
         <ul class="nav nav-tabs" *ngIf="navCategories?.length != null">
           <li role="presentation" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active" *ngFor="let firstCateory of navCategories">
-            <a class="dropbtn">{{ firstCateory.name }}</a>
-            <ul *ngIf="firstCateory['children_data']?.length">
+            <a class="root-cat dropbtn">{{ firstCateory.name }}</a>
+            <ul *ngIf="firstCateory['children_data']?.length" class="second-level-cat">
               <li *ngFor="let secondCateory of firstCateory['children_data']" class="dropbtn">
                 <a class="dropdown-content" [routerLink]="['/plp', secondCateory.id]">{{ secondCateory.name }}</a>
                 <ul *ngIf="secondCateory['children_data']?.length">
@@ -33,5 +33,16 @@
   </div>
   <div class="row">
     <router-outlet></router-outlet>
+  </div>
+</div>
+
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown button
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
   </div>
 </div>

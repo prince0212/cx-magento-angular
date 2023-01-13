@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'variables/color'; 
+@import 'variables/global'; 
+body {
+    color: $primary-color;
+}
+
+app-header,
+app-nav-menu {
+    display: block;
+    float: left;
+    width: 100%;
+}
