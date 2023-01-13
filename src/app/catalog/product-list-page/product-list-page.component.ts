@@ -12,23 +12,31 @@ import { environment as env } from 'src/environments/environment';
 
 export class ProductListPageComponent implements OnInit {
 
-  productList:any;
+  categoryId: number;
+  productList:any; 
 
   public products: Product[];
   
   constructor(
     private catalog:CatalogService,
     private router: Router,
-    private activatedRoute: ActivatedRoute
+    private route: ActivatedRoute
   ) {
-    this.getList();
   }
 
-  ngOnInit(): void {
+  ngOnInit(){
+    this.route.params.subscribe(
+      (params: Params) => {
+        this.categoryId = params['id'];
+        this.getList(); 
+      }
+    )
+    this.getList();
   }
   
   getList() {
-    return this.catalog.getProductList().subscribe(response => {
+    this.categoryId = this.route.snapshot.params['id'];
+    this.catalog.getProductList(this.categoryId).subscribe(response => {
       this.productList = response['items'];
       var products = <Product[]> response['items'];
 
@@ -40,13 +48,11 @@ export class ProductListPageComponent implements OnInit {
           }
         });
       });
-      // end
-
     });
   }
 
-  openPdp(sku) {
-    console.log('SKU',sku);
+  // depricated 
+  openPdp(sku: string) {
     this.router.navigate(['product', sku]);
   }
 

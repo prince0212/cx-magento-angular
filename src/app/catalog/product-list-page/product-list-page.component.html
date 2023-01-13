@@ -1,63 +1,13 @@
-<!-- <p>product-list-page works!</p>
-<div class="row" *ngIf="productList?.length">
-    <div class="col-xs-12 col-sm-4">
-        <ul>
-            <li class="list-group-item" *ngFor="let product of productList">
-                <p>Name: {{ product.name }}</p>
-                <p>Id: {{ product.id }}</p>
-                <p>Sku: {{ product.sku }}</p>
-                <img src="{{product.imgSrc}}">
-            </li>
-        </ul>
-    </div>
-</div> -->
-
-<!--
-<div class="ui link cards" *ngIf="productList?.length">
-    <div class="card" *ngFor="let product of productList">
-  
-      <div class="image">
-        <img src="{{product.imgSrc}}" width="250" height="300">
-      </div>
-  
-      <div class="content">
-        <div class="header">{{product.name}}</div>
-      </div>
-  
-      <div class="extra content">
-        <span>{{product.price | currency:'NZD':true}}</span>
-        <button class="ui primary mini button right floated"
-                type="button"
-                (click)="add(product, productImg)"
-                [ngClass]="{loading: product.isAdding, disabled: product.isAdding}"
-        >
-          Add to Cart
-        </button> 
-      </div>
-  
-    </div>
-</div>
-  
-<div class="ui text large loader" [class.active]="!catalog.products?.length">Loading</div>
--->
-
 <div class="products">  
     <ng-container *ngFor="let product of productList">
-      <div class="product" (click)="openPdp(product.sku)">
+      <!-- <div class="product" (click)="openPdp(product.sku)"> -->
+        <div class="product" [routerLink]="['/product', product.sku]">
         <div class="product-thumb-container">
             <img *ngIf="product.imgSrc" src="{{ product.imgSrc }}" alt="thumbnail" class="product-thumbnail"/>
             <p *ngIf="!product.imgSrc">No image</p>
         </div>
         <div class="product-description">
           <p class="product-name">{{ product.name }}</p>
-          <!-- <div class="product-platforms">
-            <img
-             *ngFor="let gamePlatform of game.parent_platforms"            
-              class="game-platform"
-              src="assets/images/platforms/{{ gamePlatform.platform.slug }}.svg"
-              alt="{{ gamePlatform.platform.slug }}"
-            />
-          </div> -->
         </div>
       </div>
     </ng-container> 

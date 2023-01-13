@@ -36,12 +36,7 @@ export class NavMenuComponent implements OnInit {
   getCategoryList() {
     return this.categories.getCategories().subscribe(navCategories => {
       this.navCategories = navCategories['children_data'];
-      this.categoryList = <Category[]>navCategories['childen_data'];
-      // categoryList.forEach((category: any)=> {
-      //   if (category.parent_id = 2) {
-          
-      //   }
-      // }) 
+      this.categoryList = <Category[]>navCategories['childen_data']; 
     })
   }
 }

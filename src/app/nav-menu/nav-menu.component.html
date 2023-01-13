@@ -1,14 +1,32 @@
 <div class="container">
   <div class="row">
-      <div>
-        <div>
-          <!-- <ng-container *ngFor="let cateory of navCategories">
+      <div class="dropdown">
+        <!-- <div>
+          <ng-container *ngFor="let cateory of navCategories">
             <p class="product-name">{{ cateory.name }}</p>
-          </ng-container> -->
+          </ng-container>
+        </div> -->
+        <div *ngIf="navCategories?.length == null">
+          No Products
         </div>
-        <ul class="nav nav-tabs">
-          <li role="presentation" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active" *ngFor="let cateory of navCategories">
-            <a routerLink="/plp/{{cateory.id}}">{{ cateory.name }}</a>
+        <ul class="nav nav-tabs" *ngIf="navCategories?.length != null">
+          <li role="presentation" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active" *ngFor="let firstCateory of navCategories">
+            <a class="dropbtn">{{ firstCateory.name }}</a>
+            <ul *ngIf="firstCateory['children_data']?.length">
+              <li *ngFor="let secondCateory of firstCateory['children_data']" class="dropbtn">
+                <a class="dropdown-content" [routerLink]="['/plp', secondCateory.id]">{{ secondCateory.name }}</a>
+                <ul *ngIf="secondCateory['children_data']?.length">
+                  <li *ngFor="let thirdCateory of secondCateory['children_data']">
+                    <a class="dropdown-content" routerLink="/plp/{{thirdCateory.id}}">3{{ thirdCateory.name }}</a>,
+                      <ul *ngIf="thirdCateory['children_data']?.length">
+                        <li *ngFor="let fourthCateory of thirdCateory['children_data']">
+                          <a class="dropdown-content" routerLink="/plp/{{fourthCateory.id}}">{{ fourthCateory.name }}</a>
+                        </li>
+                      </ul>
+                  </li>
+                </ul>
+              </li> 
+            </ul>
           </li>
         </ul>
       </div>

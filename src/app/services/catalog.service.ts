@@ -23,10 +23,12 @@ export class CatalogService {
   ) { }
 
   //searchKey = "searchCriteria[filter_groups][0][filters][0][field]=category_id&searchCriteria[filter_groups][0][filters][0][value]=20&searchCriteria[pageSize]=10&searchCriteria[currentPage]=1";
-  searchKey = "searchCriteria[filter_groups][0][filters][0][field]=category_id&searchCriteria[filter_groups][0][filters][0][value]=3&searchCriteria[filter_groups][0][filters][0][condition_type]=eq&fields=items[id,sku,name,url,price,custom_attributes]";
+  //searchKey = "searchCriteria[filter_groups][0][filters][0][field]=category_id&searchCriteria[filter_groups][0][filters][0][value]=3&searchCriteria[filter_groups][0][filters][0][condition_type]=eq&fields=items[id,sku,name,url,price,custom_attributes]";
 
-  getProductList() {
-    return this.http.get(this.restEndPoint+'products?'+this.searchKey);
+  getProductList(id:number) {
+    console.log(' category service ',id);
+    var searchKey = "searchCriteria[filter_groups][0][filters][0][field]=category_id&searchCriteria[filter_groups][0][filters][0][value]="+id+"&searchCriteria[filter_groups][0][filters][0][condition_type]=eq&fields=items[id,sku,name,url,price,custom_attributes]";
+    return this.http.get(this.restEndPoint+'products?'+searchKey);
   }
 
   getProduct(sku:string) {
