@@ -1,37 +1,26 @@
-<div class="container">
-  <div class="row">
-      <div class="dropdown">
-        <!-- <div>
-          <ng-container *ngFor="let cateory of navCategories">
-            <p class="product-name">{{ cateory.name }}</p>
-          </ng-container>
-        </div> -->
-        <div *ngIf="navCategories?.length == null">
-          No Products
-        </div>
-        <ul class="nav nav-tabs" *ngIf="navCategories?.length != null">
-          <li role="presentation" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active" *ngFor="let firstCateory of navCategories">
-            <a class="root-cat dropbtn">{{ firstCateory.name }}</a>
-            <ul *ngIf="firstCateory['children_data']?.length" class="second-level-cat">
-              <li *ngFor="let secondCateory of firstCateory['children_data']" class="dropbtn">
-                <a class="dropdown-content" [routerLink]="['/plp', secondCateory.id]">{{ secondCateory.name }}</a>
-                <ul *ngIf="secondCateory['children_data']?.length">
-                  <li *ngFor="let thirdCateory of secondCateory['children_data']">
-                    <a class="dropdown-content" routerLink="/plp/{{thirdCateory.id}}">{{ thirdCateory.name }}</a>,
-                      <ul *ngIf="thirdCateory['children_data']?.length">
-                        <li *ngFor="let fourthCateory of thirdCateory['children_data']">
-                          <a class="dropdown-content" routerLink="/plp/{{fourthCateory.id}}">{{ fourthCateory.name }}</a>
-                        </li>
-                      </ul>
-                  </li>
-                </ul>
-              </li> 
+<div *ngIf="navCategories?.length == null">
+    No Products
+</div>
+<ul class="nav nav-tabs category-tabs" *ngIf="navCategories?.length != null">
+    <li class="root-level" role="presentation" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active" *ngFor="let firstCateory of navCategories">
+        <a class="root-cat dropbtn">{{ firstCateory.name }}</a>
+        <ul *ngIf="firstCateory['children_data']?.length" class="second-level-cat">
+            <li *ngFor="let secondCateory of firstCateory['children_data']" class="dropbtn">
+            <a class="dropdown-content" [routerLink]="['/plp', secondCateory.id]">{{ secondCateory.name }}</a>
+            <ul *ngIf="secondCateory['children_data']?.length" class="third-level-cat">
+                <li *ngFor="let thirdCateory of secondCateory['children_data']">
+                <a class="dropdown-content" routerLink="/plp/{{thirdCateory.id}}">{{ thirdCateory.name }}</a>
+                    <ul *ngIf="thirdCateory['children_data']?.length" class="fourth-level-cat">
+                    <li *ngFor="let fourthCateory of thirdCateory['children_data']">
+                        <a class="dropdown-content" routerLink="/plp/{{fourthCateory.id}}">{{ fourthCateory.name }}</a>
+                    </li>
+                    </ul>
+                </li>
             </ul>
-          </li>
+            </li> 
         </ul>
-      </div>
-  </div>
-  <div class="row">
+    </li>
+</ul>
+<div class="row">
     <router-outlet></router-outlet>
-  </div>
 </div>

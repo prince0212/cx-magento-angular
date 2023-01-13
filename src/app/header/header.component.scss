@@ -1,7 +1,8 @@
 .navbar-header{
     background: transparent;
     border: 0;
-    padding: 20px;
+    border-bottom: 1px solid rgba(0,0,0,.15);
+    padding: 10px 0;
 }
 .navbar-brand {
     height: auto;
@@ -10,6 +11,42 @@
 .Search {
     padding: 20px 0;
 }
-.right-menu {
-    padding: 10px 0;
+.right-menu,
+.dropdown-menu-toggle {
+    padding: 10px 15px;
+}
+.position-unset-dropdown {
+    position: unset;
+}
+.dropdown-menu-toggle button {
+    background: transparent;
+    border: 0;
+    color: #000;
+}
+
+.dropdown-menu-toggle .category-dropdownlist {
+    top: 70px;
+    transition-duration: 0.35s;
+    transition-timing-function: ease;
+    width: 100%;
+}
+.caret {
+    transition-duration: 0.35s;
+    transition-timing-function: ease; 
+}
+.dropdown-menu-toggle.open .caret {
+    transform: rotate(180deg);
+}
+
+.category-dropdownlist:before {
+    content: "";
+    border: solid #777;
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+        position: absolute;
+    right: 30rem;
+    top: -5px;
 }
