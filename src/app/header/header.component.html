@@ -1,36 +1,36 @@
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
+<nav class="navbar navbar-default navbar-header col-md-12">
+    <div class="row">
+        <div class="logo col-md-4">
         <a routerLink="/" class="navbar-brand">
             <img src="assets/images/logo.png" id="banner-logo" alt="Landing Page" style="max-width:100px; margin-top: -7px;" />
         </a>
-      </div>
-  
-      <div class="collapse navbar-collapse">
-
-        <form class="form-inline my-2 my-lg-0" #form="ngForm" (ngSubmit)="onSubmit(form)">
-          <input class="form-control mr-sm-2" type="search" ngModel placeholder="Search products"/>
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-
-        <ul class="nav navbar-nav navbar-right">
-          <li routerLinkActive="active">
-            <a routerLink="/shopping-list">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-              </svg>
-            </a>
-          </li>
-          <li class="dropdown" appDropdown>
-            <a style="cursor: pointer" class="dropdown-toggle" role="button"
-              >Account<span class="caret"></span
-            ></a>
-            <ul class="dropdown-menu">
-              <li><a style="cursor: pointer">Sign In</a></li>
-              <li><a style="cursor: pointer">Create Account</a></li>
+        </div>
+    
+        <div class="Search col-md-4">
+            <form class="form-inline my-2 my-lg-0" #form="ngForm" (ngSubmit)="onSubmit(form)">
+            <input class="form-control mr-sm-2" type="search" ngModel placeholder="Search products"/>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+        <div class="right-menu col-md-4">
+            <ul class="nav navbar-nav navbar-right">
+            <li routerLinkActive="active">
+                <a routerLink="/shopping-list">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                </svg>
+                </a>
+            </li>
+            <li class="dropdown" appDropdown>
+                <a style="cursor: pointer" class="dropdown-toggle" role="button"
+                >Account<span class="caret"></span
+                ></a>
+                <ul class="dropdown-menu">
+                <li><a style="cursor: pointer">Sign In</a></li>
+                <li><a style="cursor: pointer">Create Account</a></li>
+                </ul>
+            </li>
             </ul>
-          </li>
-        </ul>
-      </div>
+        </div>
     </div>
 </nav>
