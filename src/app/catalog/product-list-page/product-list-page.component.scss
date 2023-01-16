@@ -4,78 +4,50 @@
     height: auto;
     overflow: hidden;
     border-radius: 5px;
-    // box-shadow: 0 6px 12px rgb(0 0 0 / 18%);
     border: 1px solid rgba(0,0,0,.15);
     transition-duration: 0.3s;
     cursor: pointer;
+    float: left;
+    padding: 10px;
   
     &:hover {
       box-shadow: 0 6px 12px rgb(0 0 0 / 18%);
       transform: translateY(-3px);
     }
   
-    &-thumb-container {
-      position: relative;
-      height: 172px;
-      color: #000;
-      text-align: center;
-    }
-  
-    &-thumbnail {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      margin: 0 auto;
-      height: 172px;
-    }
-  
-    &-description {
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      // height: 157px;
-    }
-  
     &-name {
       color: #000;
       font-weight: 700;
-      font-size: 16px;
-      margin-bottom: 20px;
+      font-size: 15px;
+      margin: 10px 0 20px;
       white-space: nowrap;
       text-overflow: ellipsis;
       overflow: hidden;
-    }
-  
-    &-platforms {
-      display: flex;
-    }
-  
-    &-platform {
-      width: 20px;
-      margin-right: 10px;
+      text-align: center;
     }
   }
 
-// mobile
-@media screen and (min-width: 320px) and (max-width: 767px) {
-    .product {
-        width: 44%;
+.img-thumbnail {
+    border: 0;
+}
+
+.add-to-cart-btn {
+    text-align: center;
+    margin-bottom: 10px;
+
+    .btn.focus, .btn:focus, .btn:hover {
+        color: #fff;
     }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-    .product {
-        width: 22%;
-    }
-}
 .loader{
     width: 100px;
     height: 100px;
     border-radius: 100%;
-    position: relative;
+    position: fixed;
     margin: 0 auto;
+    top: 50%;
+    left: 50%;
 }
     
 #loader-1:before, #loader-1:after{
@@ -87,7 +59,7 @@
   height: 100%;
   border-radius: 100%;
   border: 10px solid transparent;
-  border-top-color: #3498db;
+  border-top-color: #000000;
 }
 
 #loader-1:before{
@@ -113,4 +85,17 @@
     -o-transform: rotate(360deg);
     transform: rotate(360deg);
   }
+}
+
+// mobile
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    .product {
+        width: 44%;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .product {
+        width: 22%;
+    }
 }
