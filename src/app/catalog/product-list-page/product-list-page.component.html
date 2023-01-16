@@ -1,14 +1,20 @@
-<div class="products">  
-    <ng-container *ngFor="let product of productList">
-      <!-- <div class="product" (click)="openPdp(product.sku)"> -->
-        <div class="product" [routerLink]="['/product', product.sku]">
-        <div class="product-thumb-container">
-            <img *ngIf="product.imgSrc" src="{{ product.imgSrc }}" alt="thumbnail" class="product-thumbnail"/>
-            <p *ngIf="!product.imgSrc">No image</p>
-        </div>
-        <div class="product-description">
-          <p class="product-name">{{ product.name }}</p>
+<div class="loader" id="loader-1" *ngIf="isLoading"></div>
+<p *ngIf="productList.length < 1 && !isLoading"> No Product</p>
+<div class="row" *ngIf="productList.length >= 1 && !isLoading">
+  <ng-container *ngFor="let product of productList">
+    <div class="col-md-4" [routerLink]="['/product', product.sku]">
+      <div class="card mb-4 shadow-sm">
+          <img *ngIf="product.imgSrc" src="{{ product.imgSrc }}" alt="thumbnail" class="img-thumbnail"/>
+          <p *ngIf="!product.imgSrc">No image</p>
+        <div class="card-body">
+          <p class="card-text">{{ product.name }}</p>
         </div>
       </div>
-    </ng-container> 
-  </div>
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="btn">
+          <button type="button" class="btn btn-sm btn-outline-secondary">Add to cart</button>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>
