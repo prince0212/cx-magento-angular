@@ -15,6 +15,8 @@ export class ProductListPageComponent implements OnInit {
   categoryId: number;
   productList:any; 
 
+  isLoading = true;
+
   public products: Product[];
   
   constructor(
@@ -35,8 +37,10 @@ export class ProductListPageComponent implements OnInit {
   }
   
   getList() {
+    this.isLoading = true;
     this.categoryId = this.route.snapshot.params['id'];
     this.catalog.getProductList(this.categoryId).subscribe(response => {
+      this.isLoading = false;
       this.productList = response['items'];
       var products = <Product[]> response['items'];
 
@@ -50,10 +54,4 @@ export class ProductListPageComponent implements OnInit {
       });
     });
   }
-
-  // depricated 
-  openPdp(sku: string) {
-    this.router.navigate(['product', sku]);
-  }
-
 }
