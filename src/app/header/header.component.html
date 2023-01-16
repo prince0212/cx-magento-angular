@@ -1,11 +1,32 @@
 <nav class="navbar navbar-default navbar-header col-md-12">
     <div class="row">
+        <div class="mobile-menu-toggle col-sm-2 col-xs-2">
+            <a href="javascript:void(0)" class="navbar-toggler toggler-example" data-toggle="collapse" data-target="#navbarSupportedContent1"
+                aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="dark-blue-text"><i class="glyphicon glyphicon-menu-hamburger"></i></span>
+            </a>
+
+            <!-- Collapsible content -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent1">
+                <app-nav-menu></app-nav-menu>
+            </div>
+        </div>
         <div class="logo col-md-4">
         <a routerLink="/" class="navbar-brand">
             <img src="assets/images/logo.png" id="banner-logo" alt="Landing Page" style="max-width:100px; margin-top: -7px;" />
         </a>
         </div>
-    
+        <div class="mobile-search col-sm-2 col-xs-2 position-unset-dropdown">
+            <a href="javascript:void(0)" class="dropdown-toggle" id="dropdownSearchButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="dark-blue-text"><i class="glyphicon glyphicon-search"></i></span>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownSearchButton">
+                <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search products"/>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
         <div class="Search col-md-4">
             <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search products"/>
@@ -14,8 +35,8 @@
         </div>
         <div class="right-menu col-md-4 position-unset-dropdown">
             <div class="row">
-                <div class="col-md-6 position-unset-dropdown">
-                    <div class="dropdown dropdown-menu-toggle position-unset-dropdown">
+                <div class="col-md-6 position-unset-dropdown dropdown-menu-toggle">
+                    <div class="dropdown position-unset-dropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Shop By
                         <span class="caret"></span>
@@ -25,15 +46,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 col-sm-12 col-xs-12">
                     <ul class="nav navbar-nav navbar-right">
-                        <li routerLinkActive="active">
-                            <a routerLink="/shopping-list">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-                                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-                            </svg>
-                            </a>
-                        </li>
                         <li class="dropdown" appDropdown>
                             <a style="cursor: pointer" class="dropdown-toggle" role="button"
                             >Account<span class="caret"></span
@@ -42,6 +56,13 @@
                             <li><a style="cursor: pointer">Sign In</a></li>
                             <li><a style="cursor: pointer">Create Account</a></li>
                             </ul>
+                        </li>
+                        <li routerLinkActive="active">
+                            <a routerLink="/shopping-list">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                            </svg>
+                            </a>
                         </li>
                     </ul>
                 </div>

@@ -55,3 +55,16 @@ ul.third-level-cat li a {
         content: " - ";
     }
 }
+
+// Mobile and tablet
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+    .category-tabs.nav-tabs > li {
+        width: 33%;
+        padding: 5px;
+        margin-bottom: 20px;
+    }
+    .category-tabs.nav-tabs {
+        flex-wrap: wrap;
+    }
+}
