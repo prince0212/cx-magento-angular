@@ -1,4 +1,44 @@
+
 footer {
-    float: left;
-    width: 100%;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0,0,0,.15);
+    p{
+        font-weight: 700;
+        position: relative;
+        margin-bottom: 20px;
+
+        &::after {
+            content: "";
+            height: 1px;
+            width: 60%;
+            background-color: rgba(0,0,0,.15);
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+        }
+    }
+
+    ul {
+        padding: 0;
+        list-style: none;
+        li a {
+            color: #000;
+            text-decoration: none;
+
+            &:hover {
+                color: #777;
+            }
+        }
+    }
+
+    .form-subscribe {
+        display: flex;
+    }
+
+    .copyright {
+        padding: 20px 0;
+        margin-top: 20px;
+        border-top: 1px solid rgba(0,0,0,.15);
+    }
 }

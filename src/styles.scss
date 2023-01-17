@@ -22,8 +22,10 @@ app-nav-menu {
     &.focus, 
     &:active.focus, 
     &:active:focus, 
+    &:hover,
     &:focus {
         outline: 0;
         box-shadow: none;
+        color: #fff;
     }
 }
