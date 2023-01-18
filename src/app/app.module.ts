@@ -14,12 +14,16 @@ import { FooterComponent } from './footer/footer.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { ProductListPageComponent } from './catalog/product-list-page/product-list-page.component';
 import { ProductDetailPageComponent } from './catalog/product-detail-page/product-detail-page.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 const appRoutes: Routes = [
   { path : '', component:HomeComponent },
   { path : 'plp', component:ProductListPageComponent },
   { path : 'plp/:id', component:ProductListPageComponent },
-  { path : 'product/:sku', component:ProductDetailPageComponent }
+  { path : 'product/:sku', component:ProductDetailPageComponent },
+  { path : 'login', component:LoginComponent },
+  { path : 'signup', component:SignupComponent }
 ];
 
 @NgModule({
@@ -31,7 +35,9 @@ const appRoutes: Routes = [
     FooterComponent,
     NavMenuComponent,
     ProductListPageComponent,
-    ProductDetailPageComponent
+    ProductDetailPageComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
