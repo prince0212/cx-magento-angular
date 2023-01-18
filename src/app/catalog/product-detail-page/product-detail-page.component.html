@@ -4,9 +4,60 @@
             <img *ngIf="product.imgSrc" src="{{ product.imgSrc }}" alt="thumbnail" class="pull-right img-responsive"/>
         </div>
         <div class="col-md-7 pull-right">
-            <h1>{{product.name}}</h1>
-            <p>Sku: {{ product.sku }}</p>
-            <p>$ {{product.price}}</p>
+            <div class="product-details">
+                <h1>{{product.name}}</h1>
+                <p class="sku">Sku: {{ product.sku }}</p>
+                <p class="price">$ {{product.price}}</p>
+            </div>
+            <div class="product-short-description">
+                Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.
+                Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.
+                Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.
+                Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.
+                Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="additional-information">
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#specification">Specification</a></li>
+        <li><a data-toggle="tab" href="#highlights">Highlights</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div id="specification" class="tab-pane fade in active">
+            <ul class="nav nav-tabs">
+                <li>- Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                <li>- Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                <li>- Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                <li>- Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                <li>- Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                <li>- Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                <li>- Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                <li>- Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                <li>- Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                <li>- Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                <li>- Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                <li>- Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+            </ul>
+        </div>
+        <div id="highlights" class="tab-pane fade">
+            <ul class="nav nav-tabs">
+                <li><span>Lorem ipsum dolor sit amet</span> : <span>consectetur adipisicing elit</span></li>
+                <li><span>Lorem ipsum dolor sit amet</span> : <span>consectetur adipisicing elit</span></li>
+                <li><span>Lorem ipsum dolor sit amet</span> : <span>consectetur adipisicing elit</span></li>
+                <li><span>Lorem ipsum dolor sit amet</span> : <span>consectetur adipisicing elit</span></li>
+                <li><span>Lorem ipsum dolor sit amet</span> : <span>consectetur adipisicing elit</span></li>
+                <li><span>Lorem ipsum dolor sit amet</span> : <span>consectetur adipisicing elit</span></li>
+                <li><span>Lorem ipsum dolor sit amet</span> : <span>consectetur adipisicing elit</span></li>
+                <li><span>Lorem ipsum dolor sit amet</span> : <span>consectetur adipisicing elit</span></li>
+                <li><span>Lorem ipsum dolor sit amet</span> : <span>consectetur adipisicing elit</span></li>
+                <li><span>Lorem ipsum dolor sit amet</span> : <span>consectetur adipisicing elit</span></li>
+                <li><span>Lorem ipsum dolor sit amet</span> : <span>consectetur adipisicing elit</span></li>
+                <li><span>Lorem ipsum dolor sit amet</span> : <span>consectetur adipisicing elit</span></li>
+            </ul>
         </div>
     </div>
 </div>
