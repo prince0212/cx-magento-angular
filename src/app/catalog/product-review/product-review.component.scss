@@ -1,0 +1,25 @@
+.rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+  
+.rating > input{ display:none;}
+
+.rating > label:before { 
+  content: "\2605"; /* Star */
+  margin: 2px;
+  font-size: 25px;
+  display: inline-block; 
+}
+
+.rating > label
+{
+  color: #b1b1b1; /* Start color when not clicked */
+}
+
+.rating > input:checked ~ label
+{ color: #000; } /* Set yellow color when star checked */
+
+.rating > input:hover ~ label
+{ color: #000;  } /* Set yellow color when star hover */

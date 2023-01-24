@@ -1,0 +1,38 @@
+.additional-information {
+    margin: 50px 0 30px;
+
+    .nav-tabs {
+
+        li {
+            a {
+                color: #000;
+                &:hover {
+                    background-color: transparent;
+                }
+            }
+
+            &.active a {
+                font-weight: 700;
+            }
+        }
+    }
+
+    .tab-content {
+        .tab-pane {
+            padding: 20px;
+
+            .nav-tabs {
+                border: 0;
+                
+                li {
+                    padding: 10px;
+                    float: none;
+
+                    &:nth-child(odd) {
+                        background-color: #eee;
+                    }
+                }
+            }
+        }
+    }
+}

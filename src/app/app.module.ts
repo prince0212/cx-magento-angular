@@ -16,6 +16,9 @@ import { ProductListPageComponent } from './catalog/product-list-page/product-li
 import { ProductDetailPageComponent } from './catalog/product-detail-page/product-detail-page.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { AdditionalInformationComponent } from './catalog/additional-information/additional-information.component';
+import { ProductDescriptionComponent } from './catalog/product-description/product-description.component';
+import { ProductReviewComponent } from './catalog/product-review/product-review.component';
 
 const appRoutes: Routes = [
   { path : '', component:HomeComponent },
@@ -37,7 +40,10 @@ const appRoutes: Routes = [
     ProductListPageComponent,
     ProductDetailPageComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    AdditionalInformationComponent,
+    ProductDescriptionComponent,
+    ProductReviewComponent
   ],
   imports: [
     BrowserModule,

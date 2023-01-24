@@ -41,4 +41,12 @@ export class ProductDetailPageComponent implements OnInit {
     });
     
   }
+
+  scrollToReviewForm() {
+    document.getElementById("review-form").scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest"
+    });
+  }
 }

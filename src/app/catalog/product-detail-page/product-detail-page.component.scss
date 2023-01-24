@@ -13,41 +13,32 @@
     }
 }
 
-.additional-information {
-    margin: 50px 0 30px;
 
-    .nav-tabs {
+// for stars
 
-        li {
-            a {
-                color: #000;
-                &:hover {
-                    background-color: transparent;
-                }
-            }
-
-            &.active a {
-                font-weight: 700;
-            }
-        }
-    }
-
-    .tab-content {
-        .tab-pane {
-            padding: 20px;
-
-            .nav-tabs {
-                border: 0;
-                
-                li {
-                    padding: 10px;
-                    float: none;
-
-                    &:nth-child(odd) {
-                        background-color: #eee;
-                    }
-                }
-            }
-        }
-    }
+.ratings {
+    position: relative;
+    vertical-align: middle;
+    display: inline-block;
+    color: #b1b1b1;
+    overflow: hidden;
+}
+.full-stars {
+    position: absolute;
+    left: 0;
+    top: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #000;
+}
+.empty-stars:before, .full-stars:before {
+    content:"\2605\2605\2605\2605\2605";
+    font-size: 14pt;
+    letter-spacing: 5px;
+}
+.empty-stars:before {
+    -webkit-text-stroke: 1px #b1b1b1;
+}
+.full-stars:before {
+    -webkit-text-stroke: 1px #000;
 }
