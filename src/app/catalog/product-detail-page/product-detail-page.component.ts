@@ -42,7 +42,7 @@ export class ProductDetailPageComponent implements OnInit {
     
   }
 
-  scrollToReviewForm() {
+  public scrollToReviewForm() {
     document.getElementById("review-form").scrollIntoView({
       behavior: "smooth",
       block: "start",
