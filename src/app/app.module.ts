@@ -19,6 +19,7 @@ import { SignupComponent } from './signup/signup.component';
 import { AdditionalInformationComponent } from './catalog/additional-information/additional-information.component';
 import { ProductDescriptionComponent } from './catalog/product-description/product-description.component';
 import { ProductReviewComponent } from './catalog/product-review/product-review.component';
+import { BannerComponent } from './home/banner/banner.component';
 
 const appRoutes: Routes = [
   { path : '', component:HomeComponent },
@@ -43,7 +44,8 @@ const appRoutes: Routes = [
     SignupComponent,
     AdditionalInformationComponent,
     ProductDescriptionComponent,
-    ProductReviewComponent
+    ProductReviewComponent,
+    BannerComponent
   ],
   imports: [
     BrowserModule,
