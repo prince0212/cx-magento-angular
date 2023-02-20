@@ -14,12 +14,12 @@ import { FooterComponent } from './footer/footer.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { ProductListPageComponent } from './catalog/product-list-page/product-list-page.component';
 import { ProductDetailPageComponent } from './catalog/product-detail-page/product-detail-page.component';
-import { LoginComponent } from './login/login.component';
-import { SignupComponent } from './signup/signup.component';
 import { AdditionalInformationComponent } from './catalog/additional-information/additional-information.component';
 import { ProductDescriptionComponent } from './catalog/product-description/product-description.component';
 import { ProductReviewComponent } from './catalog/product-review/product-review.component';
 import { BannerComponent } from './home/banner/banner.component';
+import { LoginComponent } from './customer/account/login/login.component';
+import { SignupComponent } from './customer/account/signup/signup.component';
 
 const appRoutes: Routes = [
   { path : '', component:HomeComponent },
