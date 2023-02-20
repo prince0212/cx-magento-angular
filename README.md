@@ -1,5 +1,11 @@
 # CxMagento
 
+# Customer Experience Angular Storefront for Adobe Commerce - Magento
+
+This is an open source angular storefront for Magento
+
+Headless with Angular Storefront for Adobe Commerce - Magento
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.18.
 
 ## Development server
