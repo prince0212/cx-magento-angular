@@ -5,21 +5,27 @@ import { catchError, tap } from "rxjs/operators";
 import { environment as env} from 'src/environments/environment';
 
   const httpOptions = {
-    headers: new HttpHeaders({ "Content-Type": "application/json" , "Access-Control-Allow-Origin": "*" }),
+    headers: new HttpHeaders({ "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" }),
   };
 
 @Injectable({
   providedIn: 'root'
 })
-export class SignupService {
+export class CustomerService {
 
-  restUrl = env.REST_END_POINT;
+  restBaseUrl = env.REST_END_POINT;
   
   constructor(
     private http: HttpClient
   ) { } 
  
-  signUpApi(data) {
-    return this.http.post<any>(this.restUrl+'customers',data);
+  signUp(data) {
+    
+    return this.http.post<any>(this.restBaseUrl+'customers', data, httpOptions);
+
+  }
+
+  login(data) {
+    return this.http.post<any>(this.restBaseUrl+'integration/customer/token', data, httpOptions);
   }
 }

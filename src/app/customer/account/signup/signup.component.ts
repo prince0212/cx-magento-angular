@@ -4,7 +4,7 @@ import {FormGroup , FormBuilder} from '@angular/forms';
 import { Router } from '@angular/router';
 import { subscribeOn } from 'rxjs/operators';
 import { environment as env} from 'src/environments/environment';
-import { SignupService } from 'src/app/services/signup.service';
+import { CustomerService } from 'src/app/services/customer.service';
 
 @Component({
   selector: 'app-signup',
@@ -13,22 +13,23 @@ import { SignupService } from 'src/app/services/signup.service';
 })
 export class SignupComponent implements OnInit {
 
-  signupUrl = env.BASE_URL;
-
   public signupForm !: FormGroup;
-  constructor(private formbuilder : FormBuilder, private http : HttpClient , private router: Router, private signup : SignupService) { }
+  constructor(
+    private formbuilder : FormBuilder, 
+    private http : HttpClient , 
+    private router: Router, 
+    private customer : CustomerService,
+  ) { }
 
   ngOnInit(): void {
     this.signupForm = this.formbuilder.group({
       fullname : [''],
       email:[''],
       password:['']
-    })
+    });
   }
 
-  restUrl = env.CUSTOMER_SIGNUP;
-  signUp()
-  {
+  signUp() {
     const data = {
       '"customer"': {
           '"email"': this.signupForm.value.email,
@@ -36,16 +37,11 @@ export class SignupComponent implements OnInit {
           '"lastname"': this.signupForm.value.fullname
       },
       '"password"': this.signupForm.value.password
-  };
-       console.log('JSON.stringify(data)');
-        console.log(JSON.stringify(data));
-        const options = {headers: {'Content-Type': 'application/json', "Access-Control-Allow-Origin": "*"}};
- this.http.post<any>(this.restUrl,JSON.stringify(data),options)
-    .subscribe(response=>{
-      console.log(response);
-      this.router.navigate(['login']);
-    });
-    
-  }
+    };
 
+    return this.customer.signUp(data).subscribe((response) => {
+      console.log(response);
+    })
+  
+  }
 }

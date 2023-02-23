@@ -7,7 +7,6 @@ export const environment = {
   BASE_URL: 'https://oauth.devvelocity.com/',
   MEDIA_DIR: 'https://oauth.devvelocity.com/media/catalog/product/',
   REST_END_POINT: 'https://oauth.devvelocity.com/rest/V1/',
-  CUSTOMER_SIGNUP: 'https://oauth.devvelocity.com/rest/V1/customers',
 };
 
 /*

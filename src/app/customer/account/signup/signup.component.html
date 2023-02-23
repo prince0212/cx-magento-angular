@@ -14,22 +14,26 @@
                     type="text"
                     class="form-control"
                     id="fullname"
+                    ngModel
+                    required
                 />
                 </div>
                 <div class="mb-3 form-group">
-                <label for="exampleInputEmail1" class="form-label"
-                    >Email address</label
+                <label 
+                    for="email" 
+                    class="form-label"
+                    required >Email address</label
                 >
                 <input
                     formControlName="email"
                     type="email"
                     class="form-control"
                     id="email"
+                    ngModel
                 />
                 </div>
                 <div class="mb-3 form-group">
-                <label for="exampleInputPassword1" class="form-label"
-                    >Password</label
+                <label for="password" class="form-label" required min-length="6">Password</label
                 >
                 <input
                     formControlName="password"
